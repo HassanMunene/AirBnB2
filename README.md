@@ -22,3 +22,9 @@ After the completion of this project I should have a complete web application co
 ![Watch Overview Video](https://www.youtube.com/watch?v=tFDUHXxZsYg)
 
 ![About The Console](https://www.youtube.com/watch?v=INn8YzN_YJM)
+
+![ORM Object-Relational-Mapping](https://www.youtube.com/watch?v=ZwCD8cNZk9U&feature=youtu.be)
+
+![RESTful API](https://www.youtube.com/watch?v=YiDX1rY8imw&feature=youtu.be)
+
+![The final Product](https://www.youtube.com/watch?v=m-cfupVumos)
