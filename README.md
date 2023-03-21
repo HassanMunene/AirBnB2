@@ -193,3 +193,7 @@ You can also store it.
 
 ```
 a_dict = {'my_date': date_now}
+print(type(a_dict['my_date'])) # <class 'datetime.datetime'>
+print(a_dict) #  {'my_date': datetime.datetime(2023, 3, 21, 13, 44, 9, 638064)}
+```
+
