@@ -1,4 +1,4 @@
-![AirBnB](https://github.com/HassanMunene/Django/blob/main/images/AirBnB.png)
+![AirBnB](https://github.com/HassanMunene/AirBnB_clone/blob/main/images/AirBnB1.png)
 
 The goal of this project is to deploy on my server a simple copy of the AirBnB website.
 
