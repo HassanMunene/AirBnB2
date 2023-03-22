@@ -52,4 +52,10 @@ print(json_data)
   }
 }
 ```
+it strore data in key value pairs and arrays
+ - Data is in key/value pairs
+ - Data is separated by commas
+ - Curly braces hold objects
+ - Square brackets hold array
 
+The most common use of of json data and file is to read data from a server for a website or web application 
