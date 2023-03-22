@@ -193,6 +193,14 @@ hi, Hassan
 hi, Hassan
 ```
 
-                                                              1,10          Top
+## Configuring Cmd Through Attributes
 
+ *prompt* can be used to set a string to be printed each time the user is asked for a new command
 
+**intro** is the "welcome" message printed at the start of the program.
+
+Any command that returns a True value stops the interpreter
+
+for more information on this module I have provided a link below that will offer you the required support
+
+[Console module](https://wiki.python.org/moin/CmdModule)
