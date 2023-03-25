@@ -1,6 +1,6 @@
 import uuid
-# we have to import a uuid module so that we can assign uuids
-import datetime
+# we have to import a uuid module so that we can assign uuid
+from datetime import datetime
 
 class BaseModel:
     """
@@ -8,10 +8,15 @@ class BaseModel:
     for other classes to inherit from
     """
 
-    def __init__(self):
-        self.id = str(uuid.uuid4()) # Every time an instance is created it is assigned a unique uuid
-        self.created_at = datetime.datetime.now()
-        self.updated_at = datetime.datetime.now()
+    def __init__(self, *args, **kwargs):
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+        for key, value in kwargs.items():
+            if key != '__class__':
+                if key in ['created_at', 'updated_at']:
+                    value = value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                setattr(self, key, value)
 
     def __str__(self):
         #we will return a string representation of the object which includes:
