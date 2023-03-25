@@ -1,3 +1,7 @@
+## The flow of Serialization and deserialization
+
+<class 'Name of the class'> -> method() 'method the class to dictionary' -> <class 'dict'> JSON dump -> <class 'str'> -> FILE.json -> <class 'str'> JSON load -> <class 'dict'> -> <class 'name of the class'>
+
 JSON is a format that encodes objects in a string. 
 
 Serialization is converting an object into a string and deserialization is converting a string into an object
