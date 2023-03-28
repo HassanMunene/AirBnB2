@@ -1,5 +1,5 @@
-from models.engine.file_storage import storage
 import uuid
+import models
 # we have to import a uuid module so that we can assign uuid
 from datetime import datetime
 
@@ -10,6 +10,16 @@ class BaseModel:
     """
 
     def __init__(self, *args, **kwargs):
+        """
+        instantiating the base model class
+        Args:
+            args: it is not used
+            kwargs: arguments to construct the BaseModel
+        Attributes:
+            id : unique id generated
+            created_at: creation time
+            updated_at: update time
+        """
         if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
@@ -20,7 +30,6 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self)
 
     def __str__(self):
         #we will return a string representation of the object which includes:
@@ -35,7 +44,8 @@ class BaseModel:
         It updates the updated_at attribute with the current time and date
         """
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         result = self.__dict__.copy()

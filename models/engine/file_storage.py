@@ -1,4 +1,5 @@
 import os.path
+from models.base_model import BaseModel
 import json
 
 class FileStorage():
@@ -25,18 +26,20 @@ class FileStorage():
         It takes object as the only argument and it used the objec's class name and id to create a key for the __objects dictionary
         You should always call this method after creating a new instance to ensure that it is stored in the __objects dictionary and later JSON file
         """
-        key = "{}.{}".format(type(obj).__name__, obj.id)
-        FileStorage.__objects[key] = obj
+        if obj:
+            key = "{}.{}".format(type(obj).__name__, obj.id)
+            FileStorage.__objects[key] = obj
 
     def save(self):
         """
         this method serializes the __objects dictionary to the JSON file at the location specified by file-path
         You should always call the save() after adding or moifying the objects in the __objects dictionary
         """
-        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-              obj_dict = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
-              json.dump(obj_dict, f)
-
+        my_dict = {}
+        for key, value in FileStorage.__objects.items():
+            my_dict[key] = value.to_dict()
+        with open(FileStorage.__file_path, 'w', encoding="UTF-8") as f:
+            json.dump(my_dict, f)
 
     def reload(self):
         """
@@ -44,11 +47,11 @@ class FileStorage():
         It then loads the objects into the __objects dictionary
         It first checks if the JSON file exists at the specified location by using the os.path.exists() function
         """
-        if os.path.exists(FileStorage.__file_path):
-            with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                for k, v in data.items():
-                    class_name = k.split(".")[0]
-                    obj = eval(class_name)(**v)
-                    FileStorage.__objects[k] = obj
+        try:
+            with open(FileStorage.__file_path, 'r', encoding="UTF-8") as f:
+                for key, value in (json.load(f)).items():
+                    value = eval(value["__class__"])(**value)
+                    FileStorage.__objects[key] = value
+        except FileNotFoundError:
+            pass
 
