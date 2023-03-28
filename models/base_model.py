@@ -35,7 +35,7 @@ class BaseModel:
         It updates the updated_at attribute with the current time and date
         """
         self.updated_at = datetime.now()
-        storage.save(self)
+        storage.save()
 
     def to_dict(self):
         result = self.__dict__.copy()
