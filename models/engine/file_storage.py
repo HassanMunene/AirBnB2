@@ -1,7 +1,7 @@
 import os
 import json
 
-class FileStorage:
+class FileStorage():
     """
     This class will be used to serialize and deserialize instances of class a class to and from a JSON file
     it has 2 private class attributes __file_path and __objects which are both very essential to the functioning of the class
