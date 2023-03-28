@@ -9,7 +9,7 @@ class FileStorage():
     __objects attribute is decalared as an empty dictionary but will store the objects by their class name and ID.
     """
 
-    def __init__(self, filename):
+    def __init__(self, filename=0):
         self.__file_path = filename
         self.__objects = {}
 
