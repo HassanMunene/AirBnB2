@@ -1,4 +1,4 @@
-from models import storage
+from models.engine.file_storage import storage
 import uuid
 # we have to import a uuid module so that we can assign uuid
 from datetime import datetime
