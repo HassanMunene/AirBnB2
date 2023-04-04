@@ -1,6 +1,6 @@
 import uuid
 import models
-# we have to import a uuid module so that we can assign uuid
+# we have to import a uuid module so that we can assign each instance of BaseModel a unique id.
 from datetime import datetime
 
 class BaseModel:

@@ -197,3 +197,5 @@ print(type(a_dict['my_date'])) # <class 'datetime.datetime'>
 print(a_dict) #  {'my_date': datetime.datetime(2023, 3, 21, 13, 44, 9, 638064)}
 ```
 
+## Using import *
+this is considered a very dangerous practice in production code. But if used then in that case the **__init__.py** should not be empty but it must include all the list of modules to load
