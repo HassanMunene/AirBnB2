@@ -49,8 +49,4 @@ class BaseModel:
         new_dict["__class__"] = self.__class__.__name__
         for key in self.__dict__:
             new_dict[key] = self.__dict__[key]
-        print(new_dict)
-
-
-obj = BaseModel()
-obj.to_dict()
+        return new_dict
