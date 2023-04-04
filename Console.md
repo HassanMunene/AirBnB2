@@ -1,3 +1,18 @@
+Each task here will help with the flow
+
+1. Put in place a parent class(BaseModel) to take care of initialization, serialization and desearilazation of future instances
+1. create a simple flow of serialiaion and deserialization:
+```
+Instance <---> Dictionary <----> JSON string <---> file.json
+```
+1. Create all classes used for the AirBnB: They all inherit from the BaseModel
+	- User
+	- State
+	- City
+	- Place
+1. Create the first abstracted storage engine for the project. File storage
+1. Create all unittest to validate all our classes and storage engine
+
 This will show us how to come up with  console that we will use to perform varous administrative tasks on our airbnb clone
 
 ## cmd module.
