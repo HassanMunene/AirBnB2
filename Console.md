@@ -13,6 +13,12 @@ Instance <---> Dictionary <----> JSON string <---> file.json
 1. Create the first abstracted storage engine for the project. File storage
 1. Create all unittest to validate all our classes and storage engine
 
+We want to create a console that will be able to di the following
+1. Create a new object( such as a new User or a new Place)
+1. Retrieve an object from a file or a database
+1. Do a number of operations on the object(count, compute stats, etc)
+1. Destroy an object
+
 This will show us how to come up with  console that we will use to perform varous administrative tasks on our airbnb clone
 
 ## cmd module.
