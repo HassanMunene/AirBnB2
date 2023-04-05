@@ -41,7 +41,7 @@ class BaseModel:
          - the id of the object
          - after this we will use __dict__ attribute to print the rest
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) <{}>".format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         """
