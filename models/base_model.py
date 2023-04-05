@@ -47,6 +47,8 @@ class BaseModel:
 
         new_dict = {}
         new_dict["__class__"] = self.__class__.__name__
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = self.updated_at.isoformat()
         for key in self.__dict__:
             new_dict[key] = self.__dict__[key]
         return new_dict
