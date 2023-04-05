@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 The mother of all classes that will be
-instantiated thereafter
+We will use the this class as a base when declaring
+other classes in the project
 it contains all the common attributes that
 all other classes will have
 """
@@ -17,7 +18,7 @@ class BaseModel:
 
     def __init__(self):
         """
-        attributes instatited when an object is
+        attributes automatically instatited when an object is
         created
         """
         self.id = str(uuid.uuid4())
@@ -28,6 +29,10 @@ class BaseModel:
         """
         returns a string representation of the object
         in a readable format
+        This string will contain the following to object at the beginning
+         - the name of the class the object belongs ti
+         - the id of the object
+         - after this we will use __dict__ attribute to print the rest
         """
         return "[{}] ({}) <{}>".format(self.__class__.__name__, self.id, self.__dict__)
 
@@ -36,7 +41,7 @@ class BaseModel:
         When called it updates the updated_at attribute
         with the current time
         """
-        self.updated_at = datetime.datetime.today()
+        self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
         """
