@@ -18,6 +18,11 @@ The class too has some methods:
 After creating the class then the next step is to make it available
 to all the classes created in the project
 This is made possible by creating an instance of the class in the __init__.py file
+We will then call the reload() method of the class because we want to load any existing data
 
+From the json file into memory when the application starts up.
+If we do not call the reload() the __objects dictionary in the instance will be empty and any prevoiusly saved data will be lost
 
+This is extremely important for applications that need to maintain
+state between sessions or across multiple instances of the application
 """
