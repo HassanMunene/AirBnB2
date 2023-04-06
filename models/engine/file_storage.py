@@ -15,7 +15,7 @@ class FileStorage:
     The class to do the dirty work of
     working with files
     """
-    _file_path = "file_storage.json"
+    _file_path = "file.json"
     _objects = {}
 
     def all(self):
