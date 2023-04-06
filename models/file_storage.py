@@ -26,3 +26,16 @@ If we do not call the reload() the __objects dictionary in the instance will be 
 This is extremely important for applications that need to maintain
 state between sessions or across multiple instances of the application
 """
+
+
+class FileStorage:
+    """
+    The class itself
+    __objects is a dictionary and will store all the instnaces of the
+        classes that need to be saved.
+        The key of __objects will be as follows:
+            <class name>.instance id
+    """
+
+    __file_path = "file.json"
+    __objects = {}
