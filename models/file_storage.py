@@ -39,3 +39,10 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
+
+    def all(self):
+        """
+        will return the dictionary __objects
+        purpose: to show us the objects contianed in the __objects
+        """
+        return self.__objects
