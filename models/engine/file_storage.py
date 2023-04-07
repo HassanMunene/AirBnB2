@@ -93,5 +93,17 @@ class FileStorage:
         This method deserializes the JSON file to __objects dictionary
         At the moment the file contains json string and now we want to
         convert it back to the dictionary but in the __objects
-        dictionary with
+        dictionary with the key being classname.id combination
         """
+        try:
+            with open(self.__file_path, mode='r', encoding='utf-8') as f:
+                json_string = f.read()
+                json_dict = json.loads(json_string)
+                class_name = json_dict['__class__']
+                obj_id = json_dict['id']
+                key = class_name + "." + obj_id
+                self.__objects[key] =  json_dict
+                print(self.__objects)
+        except FileNotFoundError:
+            pass
+

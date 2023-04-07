@@ -29,4 +29,5 @@ storage.new(object_2)
 
 print("\n\n Now we have two objects in the __objects dict lets serializae them to file.json")
 storage.save()
-
+print("\n\n\n")
+storage.reload()
