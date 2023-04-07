@@ -18,7 +18,7 @@ storage.new(object_1)
 print("\ncreating another object_2")
 object_2 = BaseModel()
 object_2.name = "Munene"
-object_1.number = "21/04609"
+object_2.number = 2104609
 print("\n")
 storage = FileStorage()
 print("So far our FileStorage __objects dictionary is having one objet")
@@ -27,4 +27,5 @@ print("\nLet's add an object to the dictionary\n")
 storage.new(object_2)
 
 print("\n\n Now we have two objects in the __objects dict lets serializae them to file.json")
+storage.save()
 

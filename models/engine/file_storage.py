@@ -37,6 +37,7 @@ This is extremely important for applications that need to maintain
 state between sessions or across multiple instances of the application
 """
 import datetime
+import json
 
 
 class FileStorage:
@@ -74,6 +75,15 @@ class FileStorage:
         """
         take the objects in the __objects dictionary and serialize them
         Then store them to a file called file.json
+        First of all the dictionary as it is now is not serializable.
+        because it contains class BaseModel which cannot be serialized
+        We will create a new dictionary that we will use to 
         """
-        #with open(file_path, mode='w', encoding='utf-8') as f:
-
+        new_dict = {}
+        for obj in self.__objects.values():
+            pass
+        new_dict = obj
+        print(new_dict)
+        with open(self.__file_path, mode='w', encoding='utf-8') as f:
+            json_string = json.dumps(new_dict)
+            f.write(json_string)
