@@ -14,6 +14,7 @@ print("So far our FileStorage __objects dictionary is empty")
 storage.all()
 print("\nLet's add an object to the dictionary\n")
 storage.new(object_1)
+storage.save()
 
 print("\ncreating another object_2")
 object_2 = BaseModel()

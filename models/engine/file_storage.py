@@ -87,3 +87,11 @@ class FileStorage:
         with open(self.__file_path, mode='w', encoding='utf-8') as f:
             json_string = json.dumps(new_dict)
             f.write(json_string)
+
+    def reload(self):
+        """
+        This method deserializes the JSON file to __objects dictionary
+        At the moment the file contains json string and now we want to
+        convert it back to the dictionary but in the __objects
+        dictionary with
+        """
