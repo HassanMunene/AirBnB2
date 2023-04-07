@@ -34,6 +34,13 @@ class BaseModel:
         """
         attributes automatically instatited when an object is
         created
+        This method takes the following arguments:
+            *args: This will not be utilized
+            **kwargs: if this is not empty then it means we are passing a dictionary.
+                    That dictionary needs to be passed backed to an instance of the class
+                    On the other hand created_at and updated_at attributes
+                    in the dictionary are strings but they need to be coverted back to datetime objects
+                    If the kwargs is empty then it means we are creating a new instace.
         """
         if kwargs:
             for key in kwargs:
