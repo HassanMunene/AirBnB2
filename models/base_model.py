@@ -5,6 +5,20 @@ We will use the this class as a base when declaring
 other classes in the project
 it contains all the common attributes that
 all other classes will have
+This class will serve as a parent to all other classes.
+By inheriting from the BaseModel other classes can take advantage of 
+the attributes and methods in this class without really having to redefine them.
+This will promote code re-usability, maintainability and consistency across different classes
+This class contains the following attribute:
+    - id: this is a string that will hold a unique identifier for each instance of BaseModel or derived class
+    - created_at: a datetime attribute that will hold the timestamp of when an instance of BaseModel or derived class was created.
+    - updated_at: datetime attribute that holds the timestamp of the most recent update to an instance of BasemModel or derived class.
+        It can be updated automatically when the save method is called
+    - save(self): will be used to update the updated_at time.
+                this method will be used after modifiying the instance
+    - to_dict(self): This method will return a dictionary representation of the instance of BaseModel or derived class.
+                    This dictionary will include all the instance attributes
+                    This method is useful for serializing instances of the class for storage or transmission
 """
 import uuid
 import datetime
@@ -24,7 +38,7 @@ class BaseModel:
         """
         if kwargs:
             for key in kwargs:
-                if key is not '__class__':
+                if key != '__class__':
                     self.created_at = datetime.datetime.now()
                     self.updated_at = datetime.datetime.now()
                     self.__dict__[key] = kwargs[key]
@@ -62,8 +76,8 @@ class BaseModel:
 
         new_dict = {}
         new_dict["__class__"] = self.__class__.__name__
-        self.created_at = self.created_at.isoformat()
-        self.updated_at = self.updated_at.isoformat()
         for key in self.__dict__:
             new_dict[key] = self.__dict__[key]
+        new_dict['created_at'] = self.created_at.isoformat()
+        new_dict['updated_at'] = self.created_at.isoformat()
         return new_dict
