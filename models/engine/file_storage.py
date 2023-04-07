@@ -3,8 +3,18 @@
 This module is about creating a class called FileStorage
 This class will be used to store and retrieve all the instances of
 classes created in this project
-They will be stored in form of a json string.
+This class will make the objects created in a program persist
+meaning that they will still exist even after the program has been
+terminated or restarted
+They will be stored in form of a json string which is the standard
+way of representing data strucutures that can be easily read and written by humans and languages
 It will do the serialization and deserialization of the instances
+The following will be the flow of serialization and desearialization:
+    - Convert object to dictionary
+    - Convert dictionary to JSON string
+    - Write the string to an file
+    - Convert the string back to a dictionary
+    - Create an object from the dictinary
 To acheive this the class will have two private attributes:
     - __file_path: will store the path to the json file
     - __objects: will store the objects we want to save to the json file
