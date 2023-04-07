@@ -43,7 +43,7 @@ class BaseModel:
                     If the kwargs is empty then it means we are creating a new instace.
         """
         if kwargs:
-            for key in kwargs:
+            for key in kwargs.keys():
                 if key != '__class__':
                     self.created_at = datetime.datetime.now()
                     self.updated_at = datetime.datetime.now()
