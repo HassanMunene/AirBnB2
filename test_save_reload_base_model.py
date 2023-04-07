@@ -2,18 +2,18 @@
 from models import storage
 from models.base_model import BaseModel
 
-all_objs = storage.all()
-print(all_objs)
-print("---------Reloaded objects---------")
+all_objects = storage.all()
 
-for obj_id in all_objs.keys():
-    obj = all_objs[obj_id]
+print("---------RELOADED OBJECTS-----------")
+for key in all_objects.keys():
+    obj = all_objects[key]
     print(obj)
 
-print()
-print("--------Created new object--------")
+print("\n")
+print("--------CREATE A NEW OBJECT---------")
 my_model = BaseModel()
-my_model.name = "my_first_model"
-my_model.number = 89
+my_model.name = "My_first_model"
+my_model.my_number = 89
 my_model.save()
 print(my_model)
+

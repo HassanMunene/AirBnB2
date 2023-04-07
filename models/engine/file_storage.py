@@ -26,6 +26,7 @@ If we do not call the reload() the __objects dictionary in the instance will be 
 This is extremely important for applications that need to maintain
 state between sessions or across multiple instances of the application
 """
+import datetime
 
 
 class FileStorage:
@@ -55,5 +56,13 @@ class FileStorage:
         """
 
         key = type(obj).__name__ + "." + obj.id
-        self.__objects[key] = obj
+        self.__objects[key] = obj.to_dict()
+        print(self.__objects)
+
+    def save(self):
+        """
+        take the objects in the __objects dictionary and serialize them
+        Then store them to a file called file.json
+        """
+        #with open(file_path, mode='w', encoding='utf-8') as f:
 

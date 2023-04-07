@@ -22,7 +22,6 @@ This class contains the following attribute:
 """
 import uuid
 import datetime
-from models import storage
 
 
 class BaseModel:
@@ -46,7 +45,6 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.today()
             self.updated_at = datetime.datetime.today()
-            storage.new(self)
 
     def __str__(self):
         """
@@ -65,7 +63,6 @@ class BaseModel:
         with the current time
         """
         self.updated_at = datetime.datetime.now()
-        storage.save()
 
     def to_dict(self):
         """
@@ -76,7 +73,7 @@ class BaseModel:
 
         new_dict = {}
         new_dict["__class__"] = self.__class__.__name__
-        for key in self.__dict__:
+        for key in self.__dict__.keys():
             new_dict[key] = self.__dict__[key]
         new_dict['created_at'] = self.created_at.isoformat()
         new_dict['updated_at'] = self.created_at.isoformat()
