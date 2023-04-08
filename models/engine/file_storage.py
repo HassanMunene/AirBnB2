@@ -69,7 +69,7 @@ class FileStorage:
 
         key = type(obj).__name__ + "." + obj.id
         self.__objects[key] = obj.to_dict()
-        print(self.__objects)
+        #print(self.__objects)
 
     def save(self):
         """

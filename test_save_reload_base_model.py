@@ -12,3 +12,6 @@ for key in all_objs.keys():
     print(obj)
 
 print("\n-------CREATE A NEW OBJECT-------")
+my_model = BaseModel()
+my_model.name = "My_First_Model"
+my_model.my_number = 89
