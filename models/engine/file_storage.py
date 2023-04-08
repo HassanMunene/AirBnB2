@@ -57,7 +57,6 @@ class FileStorage:
         will return the dictionary __objects
         purpose: to show us the objects contianed in the __objects
         """
-        print(self.__objects)
         return self.__objects
     
     def new(self, obj):
