@@ -28,5 +28,11 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
+    def emptyline(self):
+        """
+        do nothing on empty line
+        """
+        pass
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
