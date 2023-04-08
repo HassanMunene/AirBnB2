@@ -22,7 +22,7 @@ This class contains the following attribute:
 """
 import uuid
 import datetime
-import storage
+from models import storage
 
 
 class BaseModel:
