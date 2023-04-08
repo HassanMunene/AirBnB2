@@ -83,7 +83,7 @@ class FileStorage:
         for obj in self.__objects.values():
             pass
         new_dict = obj
-        print(new_dict)
+        #print(new_dict)
         with open(self.__file_path, mode='w', encoding='utf-8') as f:
             json_string = json.dumps(new_dict)
             f.write(json_string)
